@@ -1,11 +1,3 @@
-READ ME File for CallumLittle_Hello_World_GA.py and Random_Search_Hello_World.py
-
-Student Name: Callum Little
-Student Number: 201775475
-Class: Advanced Topics in Software Engineering
-Assignment: Hello World! GA Implementation
-
-
 ############################# Intro ##############################
 
 The task was completed using Python 2.7. 
@@ -28,9 +20,8 @@ I have split the code up in to sections:
 
 
 
-####################### Running the code #########################
-		
-To run the code you just run CallumLittle_Hello_World_GA.py in the terminal window. If you would like to change between generation-dependant and generation-independant versions of the GA you can uncomment the one desired at the bottom of the code in the RUN section.
+####################### Running the code ########################
+If you would like to change between generation-dependant and generation-independant versions of the GA you can uncomment the one desired at the bottom of the code in the RUN section.
 
 The different parameters, such as population size, rate of mutation etc. can also be adjusted within the CallumLittle_Hello_World_GA.py file.
 
@@ -38,14 +29,12 @@ The default parameters are:
 
 Population size = 100  
 Number of tournament/selection winners = 50    
-Rate of mutation in the population = 0.2          
+Rate of mutation in the population = 0.2p
 probability that a letter in the string will be mutated to a different letter = 0.3          
 Target = "Hello World!"
 Length = Length of Target
 
  
-
-
 ##################### Other Points to Note ######################
 
 There is a choice to use the "Selection" function or the "Tournament" function as the selection process within the G.A. The "Tournament" function has been selected as default. The differences are:
