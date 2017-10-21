@@ -1,0 +1,85 @@
+READ ME File for CallumLittle_Hello_World_GA.py and Random_Search_Hello_World.py
+
+Student Name: Callum Little
+Student Number: 201775475
+Class: Advanced Topics in Software Engineering
+Assignment: Hello World! GA Implementation
+
+
+############################# Intro ##############################
+
+The task was completed using Python 2.7. 
+
+I have created two versions of the same genetic algorithm for this assignment. "genetic_algorithm_1" iterates over a set number of generations determined by the user and "genetic_algorithm_2" will continue to run until the solution has been reached. These functions have been identfied in the code. I have set the generations-independant version of the algorithm, "genetic_algorithm_2", to run as default becuase this was the function type discussed in the lecture
+
+
+
+
+#################### Navigation of the program ###################
+
+I have split the code up in to sections:
+
+	- Parameters is all of the inputs for the final genetic algorithm. Each has comments explaining their role. 
+
+	- The Population, Fitness, Selection, Tournament, Crossover and Mutation sections contain all of the functions required to construct the mechanisms for each of those processes.
+    
+	- Iteration contains the two versions of the genetic algorithm function.
+
+
+
+
+####################### Running the code #########################
+		
+To run the code you just run CallumLittle_Hello_World_GA.py in the terminal window. If you would like to change between generation-dependant and generation-independant versions of the GA you can uncomment the one desired at the bottom of the code in the RUN section.
+
+The different parameters, such as population size, rate of mutation etc. can also be adjusted within the CallumLittle_Hello_World_GA.py file.
+
+The default parameters are:
+
+Population size = 100  
+Number of tournament/selection winners = 50    
+Rate of mutation in the population = 0.2          
+probability that a letter in the string will be mutated to a different letter = 0.3          
+Target = "Hello World!"
+Length = Length of Target
+
+ 
+
+
+##################### Other Points to Note ######################
+
+There is a choice to use the "Selection" function or the "Tournament" function as the selection process within the G.A. The "Tournament" function has been selected as default. The differences are:
+
+"Selection" shuffles the population and picks the first pop_size/2 strings as the parents.
+
+"Tournament" takes 2 random strings from the list and keeps the string with the highest fitness value. 
+
+"Tournament" is much more suited to a GA, but "Selection" also works well.
+
+The fitness function and the scale on which it operates are explained in the script. The scale is between 0 and len(target) (=12 in this case) and the fitness function identifies how many characters in the string match that of the target. So the fittest value is 12.   
+
+
+
+
+########################### Findings ############################
+
+I had a lot of issues generating a random string of letters using a random character selector. In this case it would sometimes create strings that were too long, despite my best efforts to restrict their length. So for simplicity I generated the random strings in the population using the string:
+
+letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ! .'
+
+The program selects random characters from "letters" and creates a new string that is the same length as the target using the randomly selected characters. I encountered no issues with this method. Doing it this way may simplify things a bit but I feel that it would not affect the performance of the code too much. However I do not have any proof of this so far, it's just a hunch. I will definitely be looking to figure this out! 
+
+I found that a high mutation rate makes the algorithm less efficient, which makes sense as there is i higher chance that any good solutions will be mutated. Also, increasing the probability that a letter will be mutated makes the prgramm slightly less efficient, but not to the extent that increasing the rate does. Again this makes sense as there is still less mutation going on than if the rate was higher, its just that the few mutated objects are being mutated to a larger extent. 
+
+--------------
+
+I have also included my random search algorithm, the script Random_Search_Hello_World.py. This algorithm continuously generates new populations of random strings until one of the strings in the population has a fintess value that is above some "Bound for Search". The program components are explained in the program. Again there are generation dependant and generation independant versions, with the independant version set as default. The genetic algorithm works much faster than the random search function, as I expected. If the search function doesn't utilise a fitness to get closer and closer to the target, it will just be pure chance for a solution to be close to the target. The default parameters in for the function are:
+
+Population size = 100     
+Target = "Hello World!"
+Length = Length of Target
+Bound for Search = 7
+
+Whenever I ran the random search algorithm it failed to generate a word that fell within the alloted fitness range (I would cancel the script after a few thousand generations as it ran for much longer than the GA ever needed to)
+
+   
