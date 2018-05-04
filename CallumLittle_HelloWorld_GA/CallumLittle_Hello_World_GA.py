@@ -1,15 +1,7 @@
-"""
-Student Name: Callum Little
-Student Number: 201775475
-Class: Advanced Topics in Software Engineering
-Assignment: Hello World! GA Implementation
-"""
-
-
 import random as r
 import operator
 import sys
-from timeit import default_timer
+rom timeit import default_timer
 
 
 
